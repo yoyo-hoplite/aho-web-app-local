@@ -1,0 +1,24 @@
+{
+    "appName": "AhoWebApp",
+    "projectId": "006a2f28-8664-46ab-ae24-11ebc29881a2",
+    "solutionSettings": {
+        "name": "fx-solution-azure",
+        "version": "1.0.0",
+        "hostType": "Azure",
+        "azureResources": [],
+        "capabilities": [
+            "Tab"
+        ],
+        "activeResourcePlugins": [
+            "fx-resource-frontend-hosting",
+            "fx-resource-aad-app-for-teams",
+            "fx-resource-local-debug",
+            "fx-resource-appstudio",
+            "fx-resource-simple-auth"
+        ]
+    },
+    "version": "1.0.0",
+    "activeEnvironment": "default",
+    "isFromSample": false,
+    "programmingLanguage": "typescript"
+}
