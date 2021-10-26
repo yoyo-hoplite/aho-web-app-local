@@ -1,6 +1,6 @@
 import { Box } from '@mui/system'
 import CrownImg from '../../assets/crown.png'
-import { courseCardSx } from './styles'
+import { courseListSx, courseCardSx } from './styles'
 
 interface Props {
   courses: any[]
@@ -10,11 +10,11 @@ export default function CourseList(props: Props) {
   const { courses } = props
 
   return (
-    <section>
+    <Box component='section' sx={courseListSx}>
       {courses.map((course, idx) => (
         <CourseCard key={idx} course={course} />
       ))}
-    </section>
+    </Box>
   )
 }
 

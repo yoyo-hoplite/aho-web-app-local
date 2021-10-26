@@ -22,7 +22,7 @@ export const FAKE_COURSES = [
   },
   {
     courseid: '1',
-    category1: 'privacy',
+    category1: 'privacy1',
     category2: 'ISO27001',
     skills: ['data', 'confidenitaly', 'PC-L1'],
     score_init: '1',
@@ -43,7 +43,7 @@ export const FAKE_COURSES = [
   },
   {
     courseid: '1',
-    category1: 'privacy',
+    category1: 'privacy2',
     category2: 'ISO27001',
     skills: ['data', 'confidenitaly', 'PC-L1'],
     score_init: '1',
@@ -64,7 +64,7 @@ export const FAKE_COURSES = [
   },
   {
     courseid: '1',
-    category1: 'privacy',
+    category1: 'privacy3',
     category2: 'ISO27001',
     skills: ['data', 'confidenitaly', 'PC-L1'],
     score_init: '1',
@@ -85,7 +85,7 @@ export const FAKE_COURSES = [
   },
   {
     courseid: '1',
-    category1: 'privacy',
+    category1: 'privacy4',
     category2: 'ISO27001',
     skills: ['data', 'confidenitaly', 'PC-L1'],
     score_init: '1',

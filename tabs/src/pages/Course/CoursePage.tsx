@@ -1,6 +1,6 @@
 import Banner, { useBannerHeight } from '../../components/Banner'
 import { Box } from '@mui/system'
-import { infoSx, titleSx, courseListSx } from './styles'
+import { infoSx, titleSx, contentSx } from './styles'
 import { useEffect, useState } from 'react'
 import { FAKE_COURSES } from './fakedata'
 import CourseList from './CourseList'
@@ -19,7 +19,7 @@ export const CoursePage = () => {
       <Banner />
       <div style={{ display: 'flex', height: contentHeight }}>
         {/* Courses List */}
-        <Box sx={courseListSx}>
+        <Box sx={contentSx}>
           <Box sx={titleSx}>
             <div className='title'>Courses List</div>
             <div className='completed'>
