@@ -8,7 +8,7 @@ import TermsOfUse from './components/TermsOfUse'
 import Tab from './components/Tab'
 import './App.css'
 import TabConfig from './components/TabConfig'
-import CourseTab from './Course/Course'
+import CoursePage from './pages/Course/CoursePage'
 
 /**
  * The main app which handles the initialization and routing
@@ -29,7 +29,7 @@ export default function App() {
             <Route exact path='/privacy' component={Privacy} />
             <Route exact path='/termsofuse' component={TermsOfUse} />
             <Route exact path='/tab' component={Tab} />
-            <Route exact path='/courses' component={CourseTab} />
+            <Route exact path='/courses' component={CoursePage} />
             <Route exact path='/config' component={TabConfig} />
           </>
         )}

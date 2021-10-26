@@ -9,6 +9,7 @@
         "@microsoft/teams-js": "^1.6.0",
         "@microsoft/teamsfx": "^0.3.0",
         "@mui/material": "^5.0.4",
+        "@mui/system": "^5.0.4",
         "axios": "^0.21.1",
         "classnames": "^2.3.1",
         "msteams-react-base-component": "^3.1.0",

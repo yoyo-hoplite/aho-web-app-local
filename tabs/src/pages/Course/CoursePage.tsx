@@ -1,8 +1,8 @@
-import Banner from '../components/Banner'
+import Banner from '../../components/Banner'
 import { Box } from '@mui/system'
 import { titleSx } from './styles'
 
-export const CourseTab = () => {
+export const CoursePage = () => {
   return (
     <main>
       <section>
@@ -24,4 +24,4 @@ export const CourseTab = () => {
   )
 }
 
-export default CourseTab
+export default CoursePage

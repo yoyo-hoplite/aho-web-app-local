@@ -41,7 +41,7 @@
       "scopes": ["personal"]
     },
     {
-      "entityId": "CourseTab",
+      "entityId": "Courses",
       "name": "Courses",
       "contentUrl": "{baseUrl}/index.html#/courses",
       "websiteUrl": "{baseUrl}/index.html#/courses",
