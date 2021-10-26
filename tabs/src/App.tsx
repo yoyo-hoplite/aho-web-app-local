@@ -17,7 +17,7 @@ import CoursePage from './pages/Course/CoursePage'
 export default function App() {
   const { theme, loading } = useTeamsFx()
   return (
-    <Provider theme={theme || teamsTheme} styles={{ backgroundColor: '#eeeeee' }}>
+    <Provider theme={theme || teamsTheme} styles={{ overflow: 'hidden' }}>
       <Router>
         <Route exact path='/'>
           <Redirect to='/tab' />

@@ -3,6 +3,7 @@ import BannerImg from '../assets/banner.png'
 import HKSTPImg from '../assets/HKSTP.png'
 import CrownImg from '../assets/crown.png'
 import { SxProps, Theme } from '@mui/system'
+import { useEffect, useState } from 'react'
 
 const sx: SxProps<Theme> = {
   position: 'relative',
@@ -39,9 +40,26 @@ const sx: SxProps<Theme> = {
   },
 }
 
+export const useBannerHeight = () => {
+  const [bannerHeight, setBannerHeight] = useState(100)
+
+  useEffect(() => {
+    function onResize() {
+      const height = document.getElementById('banner')!.clientHeight
+      setBannerHeight(height)
+    }
+    window.addEventListener('resize', onResize)
+    onResize()
+
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  return { bannerHeight }
+}
+
 export default function Banner() {
   return (
-    <Box sx={sx}>
+    <Box sx={sx} id='banner'>
       <img className='bg' src={BannerImg} alt='banner' />
       <div className='wrapper'>
         <img className='hkstp' src={HKSTPImg} alt='HKSTP' />
