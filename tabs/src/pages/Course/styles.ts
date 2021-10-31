@@ -19,6 +19,7 @@ export const titleSx: SxProps<Theme> = {
     lineHeight: '43px',
     color: '#000000',
   },
+  // TODO: independent
   '& .legend': {
     display: 'block',
     width: '10px',
@@ -103,4 +104,117 @@ export const infoSx: SxProps<Theme> = {
   width: `${INFO_WIDTH}px`,
   padding: '22px 25px',
   boxSizing: 'border-box',
+}
+
+/***********************/
+/**** Course History ***/
+/***********************/
+
+export const historySx: SxProps<Theme> = {
+  boxShadow: '0px 3px 6px #00000029',
+  background: '#FFF',
+  padding: '22px',
+  '& .title-wrapper': {
+    display: 'flex',
+    borderBottom: 'solid 2px #ececec',
+    paddingBottom: '13px',
+  },
+  '& .rule-icon': {
+    width: '53px',
+    height: '53px',
+    marginRight: '32px',
+  },
+  '& .title': {
+    fontSize: '28px',
+    lineHeight: '34px',
+    color: '#000',
+    fontWeight: 'bold',
+  },
+  // TODO: independent
+  '& .legend': {
+    display: 'block',
+    width: '10px',
+    height: '10px',
+    marginRight: '8px',
+    borderRadius: '2px',
+  },
+  '& .completed': {
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '18px',
+    lineHeight: '22px',
+    color: '#006EC2',
+    '& .legend': {
+      background: '#006EC2',
+    },
+  },
+  '& .processing': {
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '18px',
+    lineHeight: '22px',
+    color: '#707070',
+    '& .legend': {
+      marginLeft: '30px',
+      background: '#707070',
+    },
+  },
+  '& .navigation-row': {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    fontSize: '24px',
+    marginTop: '20px',
+    '& .type': {
+      color: '#000',
+      fontWeight: 'bold',
+    },
+  },
+}
+
+export const historyRowSx: SxProps<Theme> = {
+  color: '#006EC2',
+  fontSize: '18px',
+  lineHeight: '22px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'flex-end',
+  borderBottom: 'solid 2px #ECECEC',
+  margin: '18px 20px 0px 20px',
+  '& .name': {
+    fontWeight: 'bold',
+  },
+}
+
+export const badgesSx: SxProps<Theme> = {
+  marginTop: '22px',
+  '& .title': {
+    fontSize: '28px',
+    fontWeight: 'bold',
+    marginBottom: '22px',
+    marginLeft: '16px',
+  },
+  '& .badges-wrapper': {
+    background: '#fff',
+    paddingTop: '15px',
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+}
+
+export const badgeInfoSx: SxProps<Theme> = {
+  width: '25%',
+  margin: '0px 4%',
+  fontSize: '18px',
+  lineHeight: '22px',
+  fontWeight: 'bold',
+  color: '#000',
+  textAlign: 'center',
+  marginBottom: '30px',
+  '& .badge-title': {
+    height: '44px',
+  },
+  '& .badge-img': {
+    width: '100%',
+  },
 }

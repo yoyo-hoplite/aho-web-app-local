@@ -105,3 +105,27 @@ export const FAKE_COURSES = [
     required_skills: [],
   },
 ]
+
+export const FAKE_COURSE_HISTORY = [
+  {
+    courseid: '2',
+    category1: 'integrity',
+    category2: 'ISO',
+    skills: ['data2', 'confidenitaly2', 'PC-L2'],
+    score_init: '2',
+    score_complete: '20',
+    score_pass: '60',
+    duration: '600',
+    url: 'https://bbbb',
+    url_moile: 'https://bbbb',
+    test_id: 'MC2',
+    test_url: 'https://bbbb',
+    media: 'video2',
+    schedule_time: '4',
+    schedule_day: '2',
+    timestamp: '2021-10-27@16:20:43',
+    mandatory: ['user2'],
+    cpd: ['cissp'],
+    required_skills: [],
+  },
+]

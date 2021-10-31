@@ -4,6 +4,8 @@ import { infoSx, titleSx, contentSx } from './styles'
 import { useEffect, useState } from 'react'
 import { FAKE_COURSES } from './fakedata'
 import CourseList from './CourseList'
+import CourseHistory from './CourseHistory'
+import CourseBadges from './CourseBadges'
 
 export const CoursePage = () => {
   const [courses, setCourses] = useState(FAKE_COURSES)
@@ -36,7 +38,10 @@ export const CoursePage = () => {
         </Box>
 
         {/* History and Badges */}
-        <Box sx={infoSx}>123</Box>
+        <Box sx={infoSx}>
+          <CourseHistory />
+          <CourseBadges />
+        </Box>
       </div>
     </main>
   )
