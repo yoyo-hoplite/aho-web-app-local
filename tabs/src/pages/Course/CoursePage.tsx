@@ -7,8 +7,10 @@ import CourseHistory from './CourseHistory'
 import CourseBadges from './CourseBadges'
 import axios from 'axios'
 import qs from 'qs'
+import useLogin from '../../hooks/useLogin'
 
 export const CoursePage = () => {
+  useLogin()
   // TODO: course type
   const [courses, setCourses] = useState<any[]>([])
   const { bannerHeight } = useBannerHeight()
@@ -44,13 +46,13 @@ export const CoursePage = () => {
         {/* Courses List */}
         <Box sx={contentSx}>
           <Box sx={titleSx}>
-            <div className='title'>Courses List</div>
-            <div className='completed'>
-              <span className='legend' />
+            <div className="title">Courses List</div>
+            <div className="completed">
+              <span className="legend" />
               <span>10 Completed</span>
             </div>
-            <div className='processing'>
-              <span className='legend' />
+            <div className="processing">
+              <span className="legend" />
               <span>2 Processing</span>
             </div>
           </Box>
