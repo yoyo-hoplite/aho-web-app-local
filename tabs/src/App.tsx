@@ -5,9 +5,6 @@ import { HashRouter as Router, Redirect, Route } from 'react-router-dom'
 import { useTeamsFx } from './components/sample/lib/useTeamsFx'
 import Privacy from './components/Privacy'
 import TermsOfUse from './components/TermsOfUse'
-import Tab from './components/Tab'
-import './App.css'
-import TabConfig from './components/TabConfig'
 import CoursePage from './pages/Course/CoursePage'
 
 /**
@@ -19,18 +16,16 @@ export default function App() {
   return (
     <Provider theme={theme || teamsTheme} styles={{ overflow: 'hidden' }}>
       <Router>
-        <Route exact path='/'>
-          <Redirect to='/tab' />
+        <Route exact path="/">
+          <Redirect to="/tab" />
         </Route>
         {loading ? (
           <Loader style={{ margin: 100 }} />
         ) : (
           <>
-            <Route exact path='/privacy' component={Privacy} />
-            <Route exact path='/termsofuse' component={TermsOfUse} />
-            <Route exact path='/tab' component={Tab} />
-            <Route exact path='/courses' component={CoursePage} />
-            <Route exact path='/config' component={TabConfig} />
+            <Route exact path="/privacy" component={Privacy} />
+            <Route exact path="/termsofuse" component={TermsOfUse} />
+            <Route exact path="/courses" component={CoursePage} />
           </>
         )}
       </Router>
