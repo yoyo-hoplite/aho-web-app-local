@@ -5,6 +5,8 @@ export const loginSx: SxProps<Theme> = {
   background: '#FFFFFF',
   padding: '52px 32px',
   width: '700px',
+  boxShadow: '0px 3px 6px #00000029',
+  borderRadius: '5px',
   '& .title': {
     fontSize: '28px',
     lineHeight: '34px',

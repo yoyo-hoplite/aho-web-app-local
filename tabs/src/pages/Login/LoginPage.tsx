@@ -4,6 +4,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { useCallback, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import useLogin from '../../hooks/useLogin'
 import { ROUTES } from '../../utils/constant'
 import { loginSx, textSx } from './styles'
 
@@ -22,10 +23,17 @@ function isValidInput(email: string, password: string) {
 
 export default function LoginPage() {
   const history = useHistory()
+  const { isLogin } = useLogin()
   const [isValid, setIsValid] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errorMsg, setErrorMsg] = useState('')
+
+  useEffect(() => {
+    if (isLogin) {
+      history.push(ROUTES.courses)
+    }
+  }, [isLogin, history])
 
   useEffect(() => {
     setIsValid(isValidInput(email, password))

@@ -7,7 +7,7 @@ export default function useLogin() {
   const [isLogin, setIsLogin] = useState(false)
 
   useEffect(() => {
-    const hasLoginBefore = sessionStorage.getItem('isLogin')
+    const hasLoginBefore = sessionStorage.getItem('uid')
 
     if (!hasLoginBefore) {
       setIsLogin(false)
