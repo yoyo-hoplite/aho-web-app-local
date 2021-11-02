@@ -4,3 +4,4 @@ node_modules
 .DS_Store
 .archive
 .archive.log
+tabs/build.zip

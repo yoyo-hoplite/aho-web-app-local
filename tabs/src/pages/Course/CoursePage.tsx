@@ -24,7 +24,7 @@ export const CoursePage = () => {
     // NOTE: API works only at production site due to CORS issue
     ;(async () => {
       const params = {
-        courseId: 1,
+        courseid: 1,
       }
       const result = await axios({
         method: 'POST',
