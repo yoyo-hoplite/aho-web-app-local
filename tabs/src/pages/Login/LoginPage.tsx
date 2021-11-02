@@ -7,6 +7,8 @@ import { useHistory } from 'react-router-dom'
 import useLogin from '../../hooks/useLogin'
 import { ROUTES } from '../../utils/constant'
 import { loginSx, textSx } from './styles'
+import LoginBg from '../../assets/login-background.png'
+import AHOLogoImg from '../../assets/AHO-logo.png'
 
 function isValidInput(email: string, password: string) {
   // TODO: validation
@@ -27,6 +29,7 @@ export default function LoginPage() {
   const [isValid, setIsValid] = useState(false)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isPasswordVisible, togglePasswordVisible] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
 
   useEffect(() => {
@@ -57,7 +60,22 @@ export default function LoginPage() {
   }, [email, password, history])
 
   return (
-    <main style={{ width: '100%', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <main
+      style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: `url(${LoginBg})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div>
+        <img src={AHOLogoImg} alt="logo" style={{ width: '287px', marginBottom: '52px' }} />
+      </div>
       <Box sx={loginSx}>
         <div className="title">Login</div>
         <TextField
@@ -65,7 +83,11 @@ export default function LoginPage() {
           id="email"
           label="Email"
           InputProps={{
-            startAdornment: <InputAdornment position="start">ICON</InputAdornment>,
+            startAdornment: (
+              <InputAdornment position="start">
+                <i className="bi bi-person" />
+              </InputAdornment>
+            ),
           }}
           value={email}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)}
@@ -77,13 +99,21 @@ export default function LoginPage() {
           id="password"
           label="Password"
           InputProps={{
-            startAdornment: <InputAdornment position="start">ICON</InputAdornment>,
-            endAdornment: <InputAdornment position="end">ICON</InputAdornment>,
+            startAdornment: (
+              <InputAdornment position="start">
+                <i className="bi bi-key" />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end" onClick={() => togglePasswordVisible(!isPasswordVisible)}>
+                {isPasswordVisible ? <i className="bi bi-eye-slash" /> : <i className="bi bi-eye" />}
+              </InputAdornment>
+            ),
           }}
           value={password}
           onChange={(event: React.ChangeEvent<HTMLInputElement>) => setPassword(event.target.value)}
           variant="standard"
-          type="password"
+          type={isPasswordVisible ? 'text' : 'password'}
         />
         <div style={{ textAlign: 'center' }}>
           <Button variant="contained" disabled={!isValid} onClick={onLogin}>

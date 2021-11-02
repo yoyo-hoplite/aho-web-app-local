@@ -7,6 +7,9 @@ export const loginSx: SxProps<Theme> = {
   width: '700px',
   boxShadow: '0px 3px 6px #00000029',
   borderRadius: '5px',
+  '& .bi': {
+    fontSize: '24px',
+  },
   '& .title': {
     fontSize: '28px',
     lineHeight: '34px',

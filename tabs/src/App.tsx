@@ -17,7 +17,7 @@ export default function App() {
   return (
     <Router>
       <Route exact path="/">
-        <Redirect to="/tab" />
+        <Redirect to={ROUTES.courses} />
       </Route>
       {loading ? (
         <div>Loading...</div>
