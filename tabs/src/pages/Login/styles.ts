@@ -21,7 +21,8 @@ export const loginSx: SxProps<Theme> = {
     marginBottom: '36px',
   },
   '& button': {
-    background: '#009869',
+    // To overwrite normal, hover and focus
+    backgroundColor: '#009869 !important',
     width: '250px',
     fontSize: '28px',
     lineHeight: '60px',
@@ -33,6 +34,7 @@ export const loginSx: SxProps<Theme> = {
     marginTop: '12px',
     fontSize: '18px',
     textAlign: 'center',
+    lineHeight: '22px',
   },
 }
 
@@ -44,7 +46,7 @@ export const textSx: SxProps<Theme> = {
     marginTop: '36px',
     paddingLeft: '27px',
     paddingRight: '18px',
-    '&::before': {
+    '&::before, &::after': {
       borderColor: '#009869 !important',
     },
   },
@@ -53,6 +55,7 @@ export const textSx: SxProps<Theme> = {
     fontSize: '18px',
     lineHeight: '22px',
     fontWeight: 'bold',
+    transform: 'none',
   },
   '& input': {
     color: '#707070',

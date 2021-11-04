@@ -71,6 +71,7 @@ export const courseCardSx: SxProps<Theme> = {
     aspectRatio: '16/9',
     width: 'auto',
     maxHeight: '154px',
+    marginRight: '20.5px',
   },
   '& .wrapper': {
     flex: 1,
@@ -199,6 +200,7 @@ export const badgesSx: SxProps<Theme> = {
     paddingTop: '15px',
     display: 'flex',
     flexWrap: 'wrap',
+    boxShadow: '0px 3px 6px #00000029',
   },
 }
 
