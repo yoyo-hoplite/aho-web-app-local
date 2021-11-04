@@ -23,19 +23,32 @@ export const CoursePage = () => {
   useEffect(() => {
     // NOTE: API works only at production site due to CORS issue
     ;(async () => {
-      const params = {
-        courseid: 1,
-      }
-      const result = await axios({
+      const courseIds = await axios({
         method: 'POST',
         headers: { 'content-type': 'application/x-www-form-urlencoded' },
         url: 'https://api.hoplite.info/aho_functions_internal_staging/aho-get-course',
-        data: qs.stringify(params),
+        data: qs.stringify({
+          courseid: 'all',
+        }),
       })
-      // Debug msg
-      console.log(result.data)
 
-      setCourses([result.data.course])
+      const result = await Promise.allSettled(
+        courseIds.data.course.map((courseid: number) =>
+          axios({
+            method: 'POST',
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+            url: 'https://api.hoplite.info/aho_functions_internal_staging/aho-get-course',
+            data: qs.stringify({ courseid }),
+          }),
+        ),
+      )
+      // typescript can not recognize PromiseSettledResult as an array
+      // @ts-ignore
+      const mergesCourses = result.map(response => response.value.course)
+      // Debug msg
+      console.log(mergesCourses)
+
+      setCourses(mergesCourses)
     })()
   }, [])
 
