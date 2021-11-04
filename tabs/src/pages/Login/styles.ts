@@ -9,6 +9,9 @@ export const loginSx: SxProps<Theme> = {
   borderRadius: '5px',
   '& .bi': {
     fontSize: '24px',
+    '&.bi-eye, &.bi-eye-slash': {
+      cursor: 'pointer',
+    },
   },
   '& .title': {
     fontSize: '28px',
@@ -21,13 +24,15 @@ export const loginSx: SxProps<Theme> = {
     marginBottom: '36px',
   },
   '& button': {
-    // To overwrite normal, hover and focus
-    backgroundColor: '#009869 !important',
+    backgroundColor: '#009869',
     width: '250px',
     fontSize: '28px',
     lineHeight: '60px',
     padding: 0,
     textTransform: 'none',
+    '&:hover': {
+      backgroundColor: '#78C8AF',
+    },
   },
   '& .error-msg': {
     color: 'red',
