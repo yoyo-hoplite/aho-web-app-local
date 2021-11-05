@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // https://fluentsite.z22.web.core.windows.net/quick-start
 import { HashRouter as Router, Redirect, Route } from 'react-router-dom'
 import { useTeamsFx } from './components/sample/lib/useTeamsFx'
@@ -14,6 +14,11 @@ import LoginPage from './pages/Login/LoginPage'
  */
 export default function App() {
   const { loading } = useTeamsFx()
+
+  useEffect(() => {
+    console.log('Version', process.env.REACT_APP_VERSION)
+  }, [])
+
   return (
     <Router>
       <Route exact path="/">
