@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import CourseList from './CourseList'
 import CourseHistory from './CourseHistory'
 import CourseBadges from './CourseBadges'
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import qs from 'qs'
 import useLogin from '../../hooks/useLogin'
 
@@ -32,7 +32,7 @@ export const CoursePage = () => {
         }),
       })
 
-      const result = await Promise.allSettled(
+      const result = await Promise.allSettled<AxiosResponse>(
         courseIds.data.course.map((courseid: number) =>
           axios({
             method: 'POST',
@@ -42,11 +42,13 @@ export const CoursePage = () => {
           }),
         ),
       )
+      // Debug msg
+      console.log('result', result)
       // typescript can not recognize PromiseSettledResult as an array
       // @ts-ignore
-      const mergesCourses = result.map(response => response.value.course)
-      // Debug msg
-      console.log(mergesCourses)
+      const mergesCourses = result
+        .filter(response => response.status === 'fulfilled')
+        .map(response => (response as PromiseFulfilledResult<AxiosResponse>).value.data.course)
 
       setCourses(mergesCourses)
     })()
