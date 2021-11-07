@@ -8,6 +8,7 @@ import CourseBadges from './CourseBadges'
 import axios, { AxiosResponse } from 'axios'
 import qs from 'qs'
 import useLogin from '../../hooks/useLogin'
+import Navigator from '../../components/Navigator'
 
 export const CoursePage = () => {
   useLogin()
@@ -56,8 +57,16 @@ export const CoursePage = () => {
 
   return (
     <main style={{ height: '100%' }}>
+      <Navigator />
       <Banner />
-      <div style={{ display: 'flex', height: contentHeight }}>
+      <div
+        style={{
+          display: 'flex',
+          height: contentHeight,
+          // min height based on History + Badges section
+          minHeight: '823px',
+        }}
+      >
         {/* Courses List */}
         <Box sx={contentSx}>
           <Box sx={titleSx}>

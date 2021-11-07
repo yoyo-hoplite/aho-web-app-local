@@ -4,6 +4,8 @@ import HKSTPImg from '../assets/HKSTP.png'
 import CrownImg from '../assets/crown.png'
 import { SxProps, Theme } from '@mui/system'
 import { useEffect, useState } from 'react'
+import { useTeams } from 'msteams-react-base-component'
+import { NAVIGATOR_HEIGHT } from './Navigator'
 
 const sx: SxProps<Theme> = {
   position: 'relative',
@@ -41,33 +43,34 @@ const sx: SxProps<Theme> = {
 }
 
 export const useBannerHeight = () => {
-  const [bannerHeight, setBannerHeight] = useState(100)
+  const [bannerHeight, setBannerHeight] = useState(220)
+  const [{ inTeams }] = useTeams()
 
   useEffect(() => {
     function onResize() {
       const height = document.getElementById('banner')!.clientHeight
-      setBannerHeight(height)
+      setBannerHeight(height + (inTeams ? 0 : NAVIGATOR_HEIGHT))
     }
     window.addEventListener('resize', onResize)
     onResize()
 
     return () => window.removeEventListener('resize', onResize)
-  }, [])
+  }, [inTeams])
 
   return { bannerHeight }
 }
 
 export default function Banner() {
   return (
-    <Box sx={sx} id='banner'>
-      <img className='bg' src={BannerImg} alt='banner' />
-      <div className='wrapper'>
-        <img className='hkstp' src={HKSTPImg} alt='HKSTP' />
-        <div className='title'>
-          <div className='name'>Cybersecurity Training</div>
+    <Box sx={sx} id="banner">
+      <img className="bg" src={BannerImg} alt="banner" />
+      <div className="wrapper">
+        <img className="hkstp" src={HKSTPImg} alt="HKSTP" />
+        <div className="title">
+          <div className="name">Cybersecurity Training</div>
           <div>20/9/2021 - 30/10/2021</div>
         </div>
-        <img className='crown' src={CrownImg} alt='crown' />
+        <img className="crown" src={CrownImg} alt="crown" />
       </div>
     </Box>
   )
