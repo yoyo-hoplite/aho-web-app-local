@@ -1,6 +1,8 @@
 import { Box, styled, SxProps, Theme } from '@mui/system'
 import { useTeams } from 'msteams-react-base-component'
+import { useHistory, useRouteMatch } from 'react-router-dom'
 import Logo from '../assets/AHO-logo.png'
+import { ROUTES } from '../utils/constant'
 
 export const NAVIGATOR_HEIGHT = 100
 
@@ -28,13 +30,22 @@ const Tab = styled('div')({
 
 export default function Navigator() {
   const [{ inTeams }] = useTeams()
+  const history = useHistory()
+  const routeMatch = {
+    mission: useRouteMatch(ROUTES.mission),
+    courses: useRouteMatch(ROUTES.courses),
+  }
 
   return inTeams ? null : (
     <Box sx={navigatorSx}>
       <img style={{ height: '72px', marginLeft: '24px' }} src={Logo} alt="logo" />
       <Tab>Main</Tab>
-      <Tab>Mission</Tab>
-      <Tab className="active">Course</Tab>
+      <Tab className={routeMatch.mission ? 'active' : ''} onClick={() => history.push(ROUTES.mission)}>
+        Mission
+      </Tab>
+      <Tab className={routeMatch.courses ? 'active' : ''} onClick={() => history.push(ROUTES.courses)}>
+        Course
+      </Tab>
       <Tab>Award</Tab>
       <Tab>CDP</Tab>
       <Tab>About</Tab>

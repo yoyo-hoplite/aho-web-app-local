@@ -7,6 +7,7 @@ import TermsOfUse from './components/TermsOfUse'
 import CoursePage from './pages/Course/CoursePage'
 import { ROUTES } from './utils/constant'
 import LoginPage from './pages/Login/LoginPage'
+import MissionPage from './pages/Mission/MissionPage'
 
 /**
  * The main app which handles the initialization and routing
@@ -32,6 +33,7 @@ export default function App() {
           <Route exact path="/privacy" component={Privacy} />
           <Route exact path="/termsofuse" component={TermsOfUse} />
           <Route exact path={ROUTES.courses} component={CoursePage} />
+          <Route exact path={ROUTES.mission} component={MissionPage} />
         </>
       )}
     </Router>

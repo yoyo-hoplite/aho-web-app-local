@@ -101,7 +101,7 @@ export const courseCardSx: SxProps<Theme> = {
 
 export const infoSx: SxProps<Theme> = {
   display: 'inline-block',
-  background: 'rgba(0, 110, 194, 0.1)',
+  background: 'rgb(228, 239, 247)',
   width: `${INFO_WIDTH}px`,
   padding: '22px 25px',
   boxSizing: 'border-box',
@@ -226,5 +226,12 @@ export const badgeInfoSx: SxProps<Theme> = {
   },
   '& .badge-img': {
     width: '100%',
+  },
+  '& .MuiLinearProgress-root': {
+    width: '82px',
+    margin: '8px auto 0px',
+  },
+  '& .MuiLinearProgress-bar': {
+    backgroundColor: '#006EC2',
   },
 }
