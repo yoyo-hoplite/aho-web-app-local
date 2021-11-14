@@ -13,10 +13,10 @@ const BADGES = ['1st-rank', 'complete-course', 'all-correct', 'mission-master', 
 export default function CourseBadges() {
   return (
     <Box sx={badgesSx}>
-      <div className='title'>Course Badges</div>
-      <div className='badges-wrapper'>
-        {BADGES.map((badge) => (
-          <BadgeInfo type={badge} />
+      <div className="title">Course Badges</div>
+      <div className="badges-wrapper">
+        {BADGES.map((badge, idx) => (
+          <BadgeInfo key={idx} type={badge} />
         ))}
       </div>
     </Box>
@@ -51,11 +51,11 @@ const BadgeInfo: React.FC<{ type: string }> = ({ type }) => {
 
   return (
     <Box sx={badgeInfoSx}>
-      <div className='badge-title'>{badge.title}</div>
-      <img className='badge-img' src={badge.img} alt='badge' />
+      <div className="badge-title">{badge.title}</div>
+      <img className="badge-img" src={badge.img} alt="badge" />
       <div>100%</div>
 
-      <BorderLinearProgress variant='determinate' value={30} />
+      <BorderLinearProgress variant="determinate" value={30} />
     </Box>
   )
 }

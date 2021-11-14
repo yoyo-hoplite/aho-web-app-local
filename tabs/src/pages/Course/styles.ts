@@ -169,6 +169,14 @@ export const historySx: SxProps<Theme> = {
     '& .type': {
       color: '#000',
       fontWeight: 'bold',
+      textTransform: 'capitalize',
+    },
+    '& .arrow': {
+      cursor: 'pointer',
+      '&.disabled': {
+        opacity: 0.5,
+        pointerEvents: 'none',
+      },
     },
   },
 }

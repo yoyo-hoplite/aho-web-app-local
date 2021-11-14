@@ -3,17 +3,17 @@ import { Box } from '@mui/system'
 import { infoSx, titleSx, contentSx } from './styles'
 import { useEffect, useState } from 'react'
 import CourseList from './CourseList'
-import CourseHistory from './CourseHistory'
+import CourseHistories from './CourseHistories'
 import CourseBadges from './CourseBadges'
 import axios, { AxiosResponse } from 'axios'
 import qs from 'qs'
 import useLogin from '../../hooks/useLogin'
 import Navigator from '../../components/Navigator'
+import { Course } from '../../utils/type'
 
 export const CoursePage = () => {
   useLogin()
-  // TODO: course type
-  const [courses, setCourses] = useState<any[]>([])
+  const [courses, setCourses] = useState<Course[]>([])
   const { bannerHeight } = useBannerHeight()
   const [contentHeight, setContentHeight] = useState<string>(`calc(100% - ${bannerHeight}px)`)
 
@@ -86,7 +86,7 @@ export const CoursePage = () => {
 
         {/* History and Badges */}
         <Box sx={infoSx}>
-          <CourseHistory />
+          <CourseHistories courses={courses} />
           <CourseBadges />
         </Box>
       </div>
